@@ -2,7 +2,7 @@
 
 [![Packagist](https://img.shields.io/packagist/v/miniframework/installer.svg)](https://packagist.org/packages/miniframework/installer)
 [![Downloads](https://img.shields.io/packagist/dt/miniframework/installer.svg)](https://packagist.org/packages/miniframework/installer)
-[![License](https://img.shields.io/packagist/l/miniframework/installer.svg)](https://github.com/miniframework/installer/blob/main/LICENSE)
+[![License](https://img.shields.io/packagist/l/miniframework/installer.svg)](https://github.com/NastMz/mini-php-framework-installer/blob/main/LICENSE)
 [![PHP Version](https://img.shields.io/packagist/php-v/miniframework/installer.svg)](https://packagist.org/packages/miniframework/installer)
 
 Global command-line installer for creating new MiniFramework PHP projects from anywhere.
