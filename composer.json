@@ -1,6 +1,6 @@
 {
   "name": "miniframework/installer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "MiniFramework PHP project installer - Create new projects globally",
   "type": "library",
   "keywords": [
