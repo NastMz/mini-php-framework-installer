@@ -716,9 +716,30 @@ GITIGNORE;
 
     private function isCommandAvailable(string $command): bool
     {
-        $which = PHP_OS_FAMILY === 'Windows' ? 'where' : 'which';
-        exec("{$which} {$command} 2>/dev/null", $output, $returnCode);
-        return $returnCode === 0;
+        // Store current directory and ensure we're in a valid one
+        $currentDir = getcwd();
+        if (!$currentDir || !is_dir($currentDir)) {
+            chdir(sys_get_temp_dir());
+        }
+        
+        try {
+            // Try to execute the command with version flag to check if it's available
+            $commands = [
+                'git' => 'git --version',
+                'composer' => 'composer --version'
+            ];
+            
+            $testCommand = $commands[$command] ?? "{$command} --version";
+            $nullDevice = PHP_OS_FAMILY === 'Windows' ? '2>NUL' : '2>/dev/null';
+            
+            exec("{$testCommand} {$nullDevice}", $output, $returnCode);
+            return $returnCode === 0 && !empty($output);
+        } finally {
+            // Restore original directory if it was valid
+            if ($currentDir && is_dir($currentDir)) {
+                chdir($currentDir);
+            }
+        }
     }
 
     private function showSuccessMessage(string $targetPath): void
