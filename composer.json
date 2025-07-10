@@ -1,6 +1,6 @@
 {
   "name": "miniframework/installer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MiniFramework PHP project installer - Create new projects globally",
   "type": "library",
   "keywords": [
@@ -13,8 +13,7 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "MiniFramework Team",
-      "email": "admin@miniframework.dev"
+      "name": "Kevin Martinez"
     }
   ],
   "require": {

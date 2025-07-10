@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'miniframework/installer',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => '7b459b7739697436ba58d3e7284337738dbb6117',
+        'pretty_version' => '1.0.1',
+        'version' => '1.0.1.0',
+        'reference' => null,
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'miniframework/installer' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '7b459b7739697436ba58d3e7284337738dbb6117',
+            'pretty_version' => '1.0.1',
+            'version' => '1.0.1.0',
+            'reference' => null,
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
