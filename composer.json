@@ -1,0 +1,43 @@
+{
+  "name": "miniframework/installer",
+  "version": "1.0.0",
+  "description": "MiniFramework PHP project installer - Create new projects globally",
+  "type": "library",
+  "keywords": [
+    "framework",
+    "php",
+    "installer",
+    "scaffold",
+    "cli"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "MiniFramework Team",
+      "email": "admin@miniframework.dev"
+    }
+  ],
+  "require": {
+    "php": "^8.4"
+  },
+  "suggest": {
+    "ext-zip": "Required for downloading framework as ZIP archive",
+    "ext-curl": "Required for downloading framework from remote sources"
+  },
+  "autoload": {
+    "psr-4": {
+      "MiniFramework\\Installer\\": "src/"
+    }
+  },
+  "bin": [
+    "bin/miniframework"
+  ],
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "scripts": {
+    "post-install-cmd": [
+      "@php -r \"echo '\\n🎉 MiniFramework Installer installed successfully!\\n';\"",
+      "@php -r \"echo 'Usage: miniframework new project-name\\n\\n';\""
+    ]
+  }
+}

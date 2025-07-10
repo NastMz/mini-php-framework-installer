@@ -1,0 +1,39 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+/**
+ * MiniFramework PHP Global Installer
+ * 
+ * Global command-line tool for creating new MiniFramework PHP projects.
+ * Usage: miniframework new <project-name> [options]
+ */
+
+// Check if running from global Composer installation
+$autoloadPaths = [
+    __DIR__ . '/../vendor/autoload.php',        // Local development
+    __DIR__ . '/../../../autoload.php',        // Global Composer install
+    __DIR__ . '/../autoload.php',              // Packagist install
+];
+
+$autoloaderFound = false;
+foreach ($autoloadPaths as $autoloadPath) {
+    if (file_exists($autoloadPath)) {
+        require_once $autoloadPath;
+        $autoloaderFound = true;
+        break;
+    }
+}
+
+if (!$autoloaderFound) {
+    echo "❌ Error: Composer autoloader not found.\n";
+    echo "Please install via: composer global require miniframework/installer\n";
+    exit(1);
+}
+
+use MiniFramework\Installer\Console\Application;
+
+// Run the installer application
+$app = new Application();
+exit($app->run($argv));
